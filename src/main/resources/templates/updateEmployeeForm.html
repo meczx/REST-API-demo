@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 class="text-center">update</h1><br><hr>
+<form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+<input type="hidden" th:field="*{id}"><br>
+<input type="text" th:field="*{name}" placeholder="name"><br>
+<input type="text" th:field="*{email}" placeholder="email"><br>
+<input type="text" th:field="*{marks}" placeholder="marks"><br>
+<input type="submit" class="btn btn-primary" value="update"> 
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Employee</h1><br>
+<a th:href="@{/showNewEmployeeForm}" class="btn btn-success" > Add Employee</a><br>
+<table width="100%" border="1" cellpadding="10" cellspacing="2">
+<tr>
+<th>Name</th> 
+<th>Email</th>
+<th>Marks</th>
+<th colspan="2">Action</th>
+</tr>
+
+<tr th:each="employee:${employees}">
+<th th:text="${employee.name}"> </th>
+<th th:text="${employee.email}"> </th>  
+<th th:text="${employee.marks}"> </th> 
+<th><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</th>
+<th><a th:href="@{/showUpdateForm/{id}(id=${employee.id})}" class="btn btn-warning">update</th>
+</tr>
+</table>
+</body>
+</html>
